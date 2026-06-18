@@ -2,77 +2,47 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>New Match Found ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The most popular dating site of the month</title>
 
-<!-- Histats -->
-<script type="text/javascript">
-var _Hasync = _Hasync || [];
-_Hasync.push(['Histats.start', '1,5007819,4,0,0,0,00010000']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-    var hs = document.createElement('script');
-    hs.type = 'text/javascript';
-    hs.async = true;
-    hs.src = '//s10.histats.com/js15_as.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();
-</script>
-
-<script>
-const links = [
-  "https://crn77.com/4/11017569",
-  "https://ey43.com/4/11017569",
-  "https://omg10.com/4/11017569"
-];
-
-const randomLink = links[Math.floor(Math.random() * links.length)];
-
-setTimeout(() => {
-    window.location.replace(randomLink);
-}, 5000);
-</script>
-
-</head>
-<body>
-
-<body>
-
-<div class="wrapper">
-
-    <div class="card">
-
-        <h1>New Match Found ❤️</h1>
-
-        <p class="desc">
-            Someone nearby is interested in chatting with you.
-            Click below to continue and see your match.
-        </p>
-
-        <a href="https://ey43.com/4/11017569" target="_blank"><img src="https://cdn.aceimg.com/kCqc6iEuF.jpg" width="300" height="250" border="0" /></a>
-<p><br></p>
-        <button id="continueBtn">
-            Continue
-        </button>
-
-        <p class="note">
-            Private • Secure • 18+
-        </p>
-
-    </div>
-
-</div>
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
 }
 
 body{
-    background:#000;
+    font-family:'Montserrat',sans-serif;
+    color:#fff;
+    overflow:hidden;
+}
+
+.video-bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-2;
+}
+
+.video-bg video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    z-index:-1;
+}
+
+.container{
     min-height:100vh;
     display:flex;
     justify-content:center;
@@ -80,99 +50,117 @@ body{
     padding:20px;
 }
 
-.wrapper{
-    width:100%;
-    max-width:420px;
-    text-align:center;
-}
-
-.logo{
-    width:120px;
-    max-width:100%;
-    margin-bottom:25px;
-}
-
 .card{
-    background:#111;
-    border:1px solid #222;
+    max-width:600px;
+    text-align:center;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(5px);
+    padding:40px 30px;
     border-radius:20px;
-    padding:30px;
-    box-shadow:0 0 30px rgba(255,255,255,.05);
+    border:2px solid rgba(255,255,255,.2);
 }
 
 h1{
-    color:#fff;
-    font-size:30px;
-    margin-bottom:15px;
-}
-
-.desc{
-    color:#bbb;
-    line-height:1.7;
-    margin-bottom:25px;
-}
-
-.online{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    color:#fff;
-    background:#181818;
-    padding:10px 15px;
-    border-radius:50px;
+    font-size:38px;
+    text-transform:uppercase;
     margin-bottom:20px;
+    color:#ff4d4d;
 }
 
-.pulse{
-    width:10px;
-    height:10px;
-    background:#00ff66;
-    border-radius:50%;
-    animation:pulse 1.5s infinite;
+p{
+    font-size:20px;
+    line-height:1.6;
+    margin-bottom:30px;
 }
 
-@keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(0,255,102,.7);}
-    70%{box-shadow:0 0 0 12px rgba(0,255,102,0);}
-    100%{box-shadow:0 0 0 0 rgba(0,255,102,0);}
-}
-
-.counter{
-    color:#fff;
-    margin:20px 0;
-}
-
-button{
-    width:100%;
-    border:none;
-    padding:16px;
-    border-radius:12px;
-    background:linear-gradient(45deg,#ff0055,#ff4d88);
-    color:#fff;
+.offer-btn{
+    display:inline-block;
+    padding:18px 45px;
+    border-radius:50px;
+    text-decoration:none;
     font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
+    font-weight:700;
+    color:#000;
+    background:linear-gradient(90deg,#fff92d,#fffc8e);
     transition:.3s;
 }
 
-button:hover{
-    transform:translateY(-2px);
+.offer-btn:hover{
+    transform:scale(1.05);
 }
 
-.note{
-    margin-top:15px;
-    color:#777;
-    font-size:13px;
+footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    text-align:center;
+    background:#fff;
+    color:#000;
+    padding:10px;
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
 }
 </style>
 
 <script>
-document.getElementById("continueBtn").onclick = function(){
-    window.location.href = randomLink;
-};
+const links = [
+  "https://dutiful-hate.com/xGK4oR",
+  "https://dutiful-hate.com/xGK4oR",
+  "https://dutiful-hate.com/xGK4oR"
+];
+
+const randomLink = links[Math.floor(Math.random() * links.length)];
+
+setTimeout(() => {
+    window.location.replace(randomLink);
+}, 12000);
 </script>
 
-</body>
+</head>
+<body>
+
+<div class="video-bg">
+    <video autoplay muted loop playsinline>
+        <source src="https://cdn.videy.co/rcl36tq91.mp4" type="video/mp4">
+    </video>
+</div>
+
+<div class="overlay"></div>
+
+<div class="container">
+    <div class="card">
+
+        <h1>Warning!</h1>
+
+        <p>
+            Before we can show you a list and photos of women who live near you and are ready to have sex right now, we need to ask a few quick questions.
+        </p>
+
+        <a href="https://dutiful-hate.com/xGK4oR" class="offer-btn">
+            Continue
+        </a>
+
+    </div>
+</div>
+
+<footer>
+    ADULT ONLY 18+
+</footer>
+
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,5007819,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5007819&101" alt="free web page counters" border="0"></a></noscript>
+<!-- Histats.com  END  -->
 
 </body>
 </html>
