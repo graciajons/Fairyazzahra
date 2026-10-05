@@ -3,153 +3,350 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The most popular dating site of the month</title>
-
-<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<title>Jointodate - Meet women for love!</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #0a0f1c, #050814);
+  color: white;
 }
 
-body{
-    font-family:'Montserrat',sans-serif;
-    color:#fff;
-    overflow:hidden;
+/* TOPBAR */
+.topbar {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  background: rgba(0,0,0,0.8);
 }
 
-.video-bg{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:-2;
+.menu-btn {
+  font-size: 22px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
-.video-bg video{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.logo {
+  color: #00ccff;
+  font-weight: bold;
 }
 
-.overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.65);
-    z-index:-1;
+/* SEARCH */
+.search-box {
+  flex: 1;
+  margin-left: 10px;
 }
 
-.container{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
+.search-box input {
+  width: 100%;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  outline: none;
+  font-size: 13px;
 }
 
-.card{
-    max-width:600px;
-    text-align:center;
-    background:rgba(0,0,0,.55);
-    backdrop-filter:blur(5px);
-    padding:40px 30px;
-    border-radius:20px;
-    border:2px solid rgba(255,255,255,.2);
+.search-box input:focus {
+  background: rgba(0,170,255,0.1);
+  box-shadow: 0 0 8px rgba(0,170,255,0.3);
 }
 
-h1{
-    font-size:38px;
-    text-transform:uppercase;
-    margin-bottom:20px;
-    color:#ff4d4d;
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background: rgba(10, 15, 28, 0.6);
+  backdrop-filter: blur(15px);
+  padding: 20px;
+  transition: 0.35s ease;
+  z-index: 1001;
+  box-shadow: 0 0 25px rgba(0,170,255,0.2);
 }
 
-p{
-    font-size:20px;
-    line-height:1.6;
-    margin-bottom:30px;
+.sidebar.active { left: 0; }
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.offer-btn{
-    display:inline-block;
-    padding:18px 45px;
-    border-radius:50px;
-    text-decoration:none;
-    font-size:18px;
-    font-weight:700;
-    color:#000;
-    background:linear-gradient(90deg,#fff92d,#fffc8e);
-    transition:.3s;
+.sidebar-header h2 {
+  color: #00ccff;
 }
 
-.offer-btn:hover{
-    transform:scale(1.05);
+.close-btn {
+  background: rgba(0,170,255,0.2);
+  color: #00ccff;
+  border-radius: 50%;
+  padding: 6px 10px;
+  cursor: pointer;
 }
 
-footer{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    text-align:center;
-    background:#fff;
-    color:#000;
-    padding:10px;
-    font-size:12px;
-    font-weight:700;
-    text-transform:uppercase;
+.subtitle {
+  color: #aaa;
+  margin: 10px 0 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: #ddd;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+.sidebar a:hover {
+  color: #00ccff;
+}
+
+/* OVERLAY */
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+}
+
+#overlay.active { display: block; }
+
+/* CONTENT */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.content {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* THUMBNAIL */
+.thumbnail {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0,140,255,0.3);
+  cursor: pointer;
+}
+
+.thumbnail img { width: 100%; }
+
+/* PLAY */
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-btn::before {
+  content: '';
+  border-left: 16px solid #00ccff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+/* DURASI */
+.duration {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  background: rgba(0,0,0,0.75);
+  padding: 3px 7px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+/* TEXT */
+.title { text-align: center; margin-top: 15px; }
+.viewer { text-align: center; color: #00ccff; }
+.desc { text-align: center; color: #aaa; font-size: 13px; }
+
+/* BUTTON */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn {
+  width: 100%;
+  max-width: 320px;
+  padding: 14px;
+  border-radius: 14px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: rgba(0,170,255,0.12);
+}
+
+.telegram {
+  background: linear-gradient(45deg,#0088cc,#00c6ff);
+}
+
+.tg-icon {
+  width: 18px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px 10px;
+  font-size: 12px;
+  color: #aaa;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer strong { color: #00ccff; }
+
+.footer-links { margin-top: 8px; }
+
+.footer-links a {
+  color: #888;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #00ccff;
+}
+
+/* POPUP MODERN */
+.popup {
+  position: fixed;
+  bottom: 20px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: rgba(20,20,20,0.7);
+  backdrop-filter: blur(10px);
+
+  padding: 10px 14px;
+  border-radius: 12px;
+
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.popup.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.popup img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.popup-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+.popup-text strong {
+  color: #00ccff;
+}
+
+.popup-text span {
+  color: #ccc;
+  font-size: 11px;
 }
 </style>
-
-<script>
-const links = [
-  "https://t.acust-7.com/396644/3785/0?target=pushnotifications&po=6456&aff_sub5=SF_006OG000004lmDN",
-  "https://t.acust-7.com/396644/3785/0?target=pushnotifications&po=6456&aff_sub5=SF_006OG000004lmDN",
-  "https://t.acust-7.com/396644/3785/0?target=pushnotifications&po=6456&aff_sub5=SF_006OG000004lmDN"
-];
-
-const randomLink = links[Math.floor(Math.random() * links.length)];
-
-setTimeout(() => {
-    window.location.replace(randomLink);
-}, 10000);
-</script>
-
 </head>
 <body>
 
-<div class="video-bg">
-    <video autoplay muted loop playsinline>
-        <source src="https://cdn.videy.co/rcl36tq91.mp4" type="video/mp4">
-    </video>
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="menu-btn" onclick="openMenu()">☰</div>
+  <div class="logo">DATING</div>
+  <div class="search-box">
+    <input type="text" placeholder="Search videos..." onkeydown="if(event.key==='Enter'){alert('The search feature is not yet available');}">
+  </div>
 </div>
 
-<div class="overlay"></div>
+<!-- SIDEBAR -->
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-header">
+    <h2>VIDEY</h2>
+    <span class="close-btn" Onclick="closeMenu()">✕</span>
+  </div>
+
+  <p class="subtitle">🎬 Streaming Premium</p>
+
+  <a href="https://64d5b402d.srtrck.top/653-65-3-46">Home</a>
+  <a href="https://64d5b402d.srtrck.top/653-65-3-46">Trending Videos</a>
+  <a href="https://64d5b402d.srtrck.top/653-65-3-46">Popular</a>
+  <a href="https://64d5b402d.srtrck.top/653-65-3-46">Contact</a>
+  <a href="https://64d5b402d.srtrck.top/653-65-3-46">About</a>
+</div>
+
+<div id="overlay" Onclick="closeMenu()"></div>
 
 <div class="container">
-    <div class="card">
+<div class="content">
 
-        <h1>Warning!</h1>
+  <div class="thumbnail" Onclick="startVideo()">
+    <img src="https://i.makeagif.com/media/6-07-2017/Hdpt_G.gif">
+    <div class="play-btn"></div>
+    <div class="duration">02:31</div>
+  </div>
 
-        <p>
-            Before we can show you a list and photos of women who live near you and are ready to have sex right now, we need to ask a few quick questions.
-        </p>
+  <h2 class="title">🔥 More Videos 🔥</h2>
 
-        <a href="https://t.acust-7.com/396644/3785/0?target=pushnotifications&po=6456&aff_sub5=SF_006OG000004lmDN" class="offer-btn">
-            Continue
-        </a>
+  <div id="viewer" class="viewer">👁️ 12.845 people watching</div>
 
-    </div>
-</div>
+  <p class="desc">⚠️ If the video cannot be opened, choose another server</p>
 
-<footer>
-    ADULT ONLY 18+
-</footer>
+  <div class="btn-group">
+    <a href="https://64d5b402d.srtrck.top/653-65-3-46" onclick="redirectNow()" class="btn">▶️ Server 1</a>
+    <a href="https://64d5b402d.srtrck.top/653-65-3-46" onclick="redirectNow()" class="btn">▶️ Server 2</a>
+    <a href="https://64d5b402d.srtrck.top/653-65-3-46" onclick="redirectNow()" class="btn">▶️ Server 3</a>
 
-<!-- Histats.com  START  (aync)-->
+    <a href="https://64d5b402d.srtrck.top/653-65-3-46" Onclick="redirectNow()" class="btn telegram">
+      <img src="https://i.makeagif.com/media/6-07-2017/Hdpt_G.gif" class="tg-icon">
+      Join Telegram
+    </a>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 <strong>Streaming Premium</strong>. All rights reserved.</p>
+    <p class="footer-links">
+      <a href="https://64d5b402d.srtrck.top/653-65-3-46">Privacy Policy</a> • 
+      <a href="https://64d5b402d.srtrck.top/653-65-3-46">Terms</a> • 
+      <a href="https://64d5b402d.srtrck.top/653-65-3-46">Contact</a>
+    </p>
+    <p style="margin-top:5px; font-size:11px; color:#666;">
+      Disclaimer: For entertainment purposes only.
+    </p>
+  </div>
+    <!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,5007819,4,0,0,0,00010000']);
 _Hasync.push(['Histats.fasi', '1']);
@@ -159,8 +356,80 @@ var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async
 hs.src = ('//s10.histats.com/js15_as.js');
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
 })();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5007819&101" alt="free web page counters" border="0"></a></noscript>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5007819&101" alt="cool hit counter" border="0"></a></noscript>
 <!-- Histats.com  END  -->
+
+</div>
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+  <img id="popupAvatar" src="">
+  <div class="popup-text">
+    <strong id="popupName"></strong>
+    <span id="popupMsg"></span>
+  </div>
+</div>
+
+<audio id="notifSound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+
+<script>
+function openMenu(){
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
+}
+function closeMenu(){
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+}
+
+/* VIEWER */
+let viewer = 12845;
+setInterval(()=>{
+  viewer += Math.floor(Math.random()*5)+1;
+  document.getElementById("viewer").innerText =
+    "👁️ " + viewer.toLocaleString() + " people watching";
+},2000);
+
+setInterval(()=>{
+  const popup = document.getElementById("popup");
+  const name = names[Math.floor(Math.random()*names.length)];
+  const avatar = avatars[Math.floor(Math.random()*avatars.length)];
+
+  document.getElementById("popupAvatar").src = avatar;
+  document.getElementById("popupName").innerText = name;
+  document.getElementById("popupMsg").innerText = "just joined";
+
+  popup.classList.add("show");
+
+  document.getElementById("notifSound").play().catch(()=>{});
+
+  setTimeout(()=>{
+    popup.classList.remove("show");
+  }, 2500);
+
+}, 5000);
+
+/* REDIRECT */
+function startVideo(){
+  window.location.href="https://64d5b402d.srtrck.top/653-65-3-46";
+}
+function redirectNow(){
+  window.location.href="https://64d5b402d.srtrck.top/653-65-3-46";
+}
+</script>
+<script>
+const offerUrl = "https://64d5b402d.srtrck.top/653-65-3-46";
+
+let redirected = false;
+
+document.addEventListener("click", function () {
+  if (redirected) return;
+
+  redirected = true;
+  window.location.href = offerUrl;
+}, { once: true });
+</script>
 
 </body>
 </html>
