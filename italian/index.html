@@ -3,151 +3,172 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HookUp Community 18+</title>
 
-<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<title>Jointodate – Meet New People Online</title>
+
+<meta name="description" content="Jointodate is a private social dating platform where adults can chat, connect, and meet new people safely online.">
+<meta name="robots" content="index, nofollow">
+<meta name="referrer" content="no-referrer">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Jointodate – Meet New People Online">
+<meta property="og:description" content="Chat and connect with new people in a private and friendly environment.">
+<meta property="og:type" content="https://Jointodate.online/">
+<meta property="og:image" content="https://dummyimage.com/1200x630/111111/aaaaaa&text=Jointodate">
+<meta property="og:url" content="https://Jointodate.online/">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    font-family:'Montserrat',sans-serif;
-    color:#fff;
-    overflow:hidden;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0d0d0d;
+  color: #eaeaea;
 }
 
-.video-bg{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:-2;
+.container {
+  max-width: 100%;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
 }
 
-.video-bg video{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.card {
+  width: 100%;
+  max-width: 520px;
+  background: #161616;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  text-align: center;
 }
 
-.overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.65);
-    z-index:-1;
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #ffffff;
 }
 
-.container{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
+.logo span {
+  color: #ff4d6d;
 }
 
-.card{
-    max-width:600px;
-    text-align:center;
-    background:rgba(0,0,0,.55);
-    backdrop-filter:blur(5px);
-    padding:40px 30px;
-    border-radius:20px;
-    border:2px solid rgba(255,255,255,.2);
+h1 {
+  font-size: clamp(20px, 5vw, 26px);
+  margin-bottom: 12px;
+  color: #ffffff;
 }
 
-h1{
-    font-size:38px;
-    text-transform:uppercase;
-    margin-bottom:20px;
-    color:#ff4d4d;
+p {
+  font-size: clamp(14px, 4vw, 16px);
+  line-height: 1.6;
+  color: #cccccc;
 }
 
-p{
-    font-size:20px;
-    line-height:1.6;
-    margin-bottom:30px;
+.ad-box {
+  margin: 18px 0;
 }
 
-.offer-btn{
-    display:inline-block;
-    padding:18px 45px;
-    border-radius:50px;
-    text-decoration:none;
-    font-size:18px;
-    font-weight:700;
-    color:#000;
-    background:linear-gradient(90deg,#fff92d,#fffc8e);
-    transition:.3s;
+.ad-box img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 10px;
 }
 
-.offer-btn:hover{
-    transform:scale(1.05);
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-top: 22px;
+  background: #ff4d6d;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.2s;
 }
 
-footer{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    text-align:center;
-    background:#fff;
-    color:#000;
-    padding:10px;
-    font-size:12px;
-    font-weight:700;
-    text-transform:uppercase;
+.btn:hover {
+  background: #e04361;
+}
+
+.note {
+  font-size: 12px;
+  color: #aaaaaa;
+  margin-top: 14px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #777777;
+  margin: 22px auto 0;
+  max-width: 520px;
+}
+
+.footer a {
+  color: #777777;
+  text-decoration: none;
+  margin: 0 6px;
+}
+
+/* Desktop optimization */
+@media (min-width: 768px) {
+  .container {
+    padding: 40px;
+  }
+
+  .card {
+    padding: 32px;
+  }
 }
 </style>
-
-<script>
-const links = [
-  "https://georgele.site/client?camp=s9&aff_id=5916&aff_sub2=facebook&click_id=savannahgracevid",
-  "https://georgele.site/client?camp=s9&aff_id=5916&aff_sub2=facebook&click_id=savannahgracevid",
-  "https://georgele.site/client?camp=s9&aff_id=5916&aff_sub2=facebook&click_id=savannahgracevid"
-];
-
-const randomLink = links[Math.floor(Math.random() * links.length)];
-
-setTimeout(() => {
-    window.location.replace(randomLink);
-}, 12000);
-</script>
-
 </head>
+
 <body>
 
-<div class="video-bg">
-    <video autoplay muted loop playsinline>
-        <source src="https://cdn.videy.co/T5znzw3z1.mp4" type="video/mp4">
-    </video>
-</div>
-
-<div class="overlay"></div>
-
 <div class="container">
-    <div class="card">
+  <div class="card">
 
-        <h1>Warning!</h1>
+    <div class="logo">Jointo<span>Date</span></div>
 
-        <p>
-            Before we can show you a list and photos of women who live near you and are ready to have sex right now, we need to ask a few quick questions.
-        </p>
+    <h1>Meet New People Online</h1>
 
-        <a href="https://georgele.site/client?camp=s9&aff_id=5916&aff_sub2=facebook&click_id=savannahgracevid" class="offer-btn">
-            Continue
-        </a>
+    <div class="ad-box">
+<a href="https://t.datsk3.com/396644/9986/0?source=facebook&file_id=634507&po=6456&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0002" target="_blank"><img src="https://www.imglnky.com/9986/010766A_GDAT_18_ALL_EN_71_L.gif.gif" width="300" height="250" border="0" /></a>
+	</div>
+    <p>
+      Jointodate is a private social dating platform designed for adults who want to
+      chat, connect, and meet new people in a safe and friendly environment.
+    </p>
+    <p>
+      ✔ Private conversations<br>
+      ✔ Real connections<br>
+      ✔ Simple and secure access
+    </p>
 
+    <a href="https://t.datsk3.com/396644/9986/0?source=facebook&po=6456&aff_sub5=SF_006OG000004lmDN" class="btn">Continue</a>
+
+    <div class="note">
+      This service is intended for adults aged 18 and over.
     </div>
+
+  </div>
 </div>
 
-<footer>
-    ADULT ONLY 18+
-</footer>
+<div class="footer">
+  © 2026 Jointodate.online |
+  <a href="/privacy">Privacy Policy</a> |
+  <a href="/privacy">Terms</a> |
+  <a href="/privacy">Disclaimer</a><br>
+  18+ Only
+</div>
 
 <!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
