@@ -3,350 +3,174 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jointodate - Meet women for love!</title>
+
+<title>Jointodate – Meet New Singles Online</title>
+
+<meta name="description" content="Jointodate is a private social dating platform where adults can chat, connect, and meet new people safely online.">
+<meta name="robots" content="index, nofollow">
+<meta name="referrer" content="no-referrer">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Jointodate – Meet New Singles Online">
+<meta property="og:description" content="Chat and connect with new people in a private and friendly environment.">
+<meta property="og:type" content="https://Jointodate.online/">
+<meta property="og:image" content="https://dummyimage.com/1200x630/111111/aaaaaa&text=Jointodate">
+<meta property="og:url" content="https://Jointodate.online/">
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #0a0f1c, #050814);
-  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0d0d0d;
+  color: #eaeaea;
 }
 
-/* TOPBAR */
-.topbar {
+.container {
+  max-width: 100%;
+  padding: 16px;
   display: flex;
-  align-items: center;
-  padding: 12px 15px;
-  background: rgba(0,0,0,0.8);
+  justify-content: center;
 }
 
-.menu-btn {
-  font-size: 22px;
-  cursor: pointer;
-  margin-right: 10px;
+.card {
+  width: 100%;
+  max-width: 520px;
+  background: #161616;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  text-align: center;
 }
 
 .logo {
-  color: #00ccff;
+  font-size: 26px;
   font-weight: bold;
+  margin-bottom: 12px;
+  color: #ffffff;
 }
 
-/* SEARCH */
-.search-box {
-  flex: 1;
-  margin-left: 10px;
+.logo span {
+  color: #ff4d6d;
 }
 
-.search-box input {
+h1 {
+  font-size: clamp(20px, 5vw, 26px);
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+p {
+  font-size: clamp(14px, 4vw, 16px);
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.ad-box {
+  margin: 18px 0;
+}
+
+.ad-box img {
   width: 100%;
-  padding: 8px 14px;
-  border-radius: 20px;
-  border: none;
-  background: rgba(255,255,255,0.05);
-  color: white;
-  outline: none;
-  font-size: 13px;
-}
-
-.search-box input:focus {
-  background: rgba(0,170,255,0.1);
-  box-shadow: 0 0 8px rgba(0,170,255,0.3);
-}
-
-/* SIDEBAR */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -260px;
-  width: 260px;
-  height: 100%;
-  background: rgba(10, 15, 28, 0.6);
-  backdrop-filter: blur(15px);
-  padding: 20px;
-  transition: 0.35s ease;
-  z-index: 1001;
-  box-shadow: 0 0 25px rgba(0,170,255,0.2);
-}
-
-.sidebar.active { left: 0; }
-
-.sidebar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.sidebar-header h2 {
-  color: #00ccff;
-}
-
-.close-btn {
-  background: rgba(0,170,255,0.2);
-  color: #00ccff;
-  border-radius: 50%;
-  padding: 6px 10px;
-  cursor: pointer;
-}
-
-.subtitle {
-  color: #aaa;
-  margin: 10px 0 20px;
-}
-
-.sidebar a {
-  display: block;
-  color: #ddd;
-  text-decoration: none;
-  margin: 15px 0;
-}
-
-.sidebar a:hover {
-  color: #00ccff;
-}
-
-/* OVERLAY */
-#overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: none;
-}
-
-#overlay.active { display: block; }
-
-/* CONTENT */
-.container {
-  display: flex;
-  justify-content: center;
-  padding: 15px;
-}
-
-.content {
-  width: 100%;
-  max-width: 420px;
-}
-
-/* THUMBNAIL */
-.thumbnail {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 0 25px rgba(0,140,255,0.3);
-  cursor: pointer;
-}
-
-.thumbnail img { width: 100%; }
-
-/* PLAY */
-.play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.play-btn::before {
-  content: '';
-  border-left: 16px solid #00ccff;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-}
-
-/* DURASI */
-.duration {
-  position: absolute;
-  bottom: 8px;
-  right: 10px;
-  background: rgba(0,0,0,0.75);
-  padding: 3px 7px;
-  border-radius: 6px;
-  font-size: 11px;
-}
-
-/* TEXT */
-.title { text-align: center; margin-top: 15px; }
-.viewer { text-align: center; color: #00ccff; }
-.desc { text-align: center; color: #aaa; font-size: 13px; }
-
-/* BUTTON */
-.btn-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  max-width: 320px;
+  height: auto;
+  border-radius: 10px;
 }
 
 .btn {
+  display: block;
   width: 100%;
-  max-width: 320px;
   padding: 14px;
-  border-radius: 14px;
-  text-align: center;
+  margin-top: 22px;
+  background: #ff4d6d;
+  color: #ffffff;
   text-decoration: none;
-  color: white;
-  background: rgba(0,170,255,0.12);
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.2s;
 }
 
-.telegram {
-  background: linear-gradient(45deg,#0088cc,#00c6ff);
+.btn:hover {
+  background: #e04361;
 }
 
-.tg-icon {
-  width: 18px;
-  margin-right: 8px;
-  vertical-align: middle;
+.note {
+  font-size: 12px;
+  color: #aaaaaa;
+  margin-top: 14px;
 }
 
-/* FOOTER */
 .footer {
   text-align: center;
-  margin-top: 30px;
-  padding: 20px 10px;
   font-size: 12px;
-  color: #aaa;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  color: #777777;
+  margin: 22px auto 0;
+  max-width: 520px;
 }
 
-.footer strong { color: #00ccff; }
-
-.footer-links { margin-top: 8px; }
-
-.footer-links a {
-  color: #888;
+.footer a {
+  color: #777777;
   text-decoration: none;
+  margin: 0 6px;
 }
 
-.footer-links a:hover {
-  color: #00ccff;
-}
+/* Desktop optimization */
+@media (min-width: 768px) {
+  .container {
+    padding: 40px;
+  }
 
-/* POPUP MODERN */
-.popup {
-  position: fixed;
-  bottom: 20px;
-  left: 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  background: rgba(20,20,20,0.7);
-  backdrop-filter: blur(10px);
-
-  padding: 10px 14px;
-  border-radius: 12px;
-
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
-
-  transform: translateY(20px);
-  opacity: 0;
-  transition: 0.4s ease;
-}
-
-.popup.show {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.popup img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-}
-
-.popup-text {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-}
-
-.popup-text strong {
-  color: #00ccff;
-}
-
-.popup-text span {
-  color: #ccc;
-  font-size: 11px;
+  .card {
+    padding: 32px;
+  }
 }
 </style>
 </head>
+
 <body>
 
-<!-- TOPBAR -->
-<div class="topbar">
-  <div class="menu-btn" onclick="openMenu()">☰</div>
-  <div class="logo">DATING</div>
-  <div class="search-box">
-    <input type="text" placeholder="Search videos..." onkeydown="if(event.key==='Enter'){alert('The search feature is not yet available');}">
-  </div>
-</div>
-
-<!-- SIDEBAR -->
-<div id="sidebar" class="sidebar">
-  <div class="sidebar-header">
-    <h2>VIDEY</h2>
-    <span class="close-btn" Onclick="closeMenu()">✕</span>
-  </div>
-
-  <p class="subtitle">🎬 Streaming Premium</p>
-
-  <a href="https://64d5b402d.srtrck.top/653-65-3-46">Home</a>
-  <a href="https://64d5b402d.srtrck.top/653-65-3-46">Trending Videos</a>
-  <a href="https://64d5b402d.srtrck.top/653-65-3-46">Popular</a>
-  <a href="https://64d5b402d.srtrck.top/653-65-3-46">Contact</a>
-  <a href="https://64d5b402d.srtrck.top/653-65-3-46">About</a>
-</div>
-
-<div id="overlay" Onclick="closeMenu()"></div>
-
 <div class="container">
-<div class="content">
+  <div class="card">
 
-  <div class="thumbnail" Onclick="startVideo()">
-    <img src="https://i.makeagif.com/media/6-07-2017/Hdpt_G.gif">
-    <div class="play-btn"></div>
-    <div class="duration">02:31</div>
-  </div>
+    <div class="logo">Jointo<span>Date</span></div>
 
-  <h2 class="title">🔥 More Videos 🔥</h2>
+    <h1>Meet New People Online</h1>
 
-  <div id="viewer" class="viewer">👁️ 12.845 people watching</div>
-
-  <p class="desc">⚠️ If the video cannot be opened, choose another server</p>
-
-  <div class="btn-group">
-    <a href="https://64d5b402d.srtrck.top/653-65-3-46" onclick="redirectNow()" class="btn">▶️ Server 1</a>
-    <a href="https://64d5b402d.srtrck.top/653-65-3-46" onclick="redirectNow()" class="btn">▶️ Server 2</a>
-    <a href="https://64d5b402d.srtrck.top/653-65-3-46" onclick="redirectNow()" class="btn">▶️ Server 3</a>
-
-    <a href="https://64d5b402d.srtrck.top/653-65-3-46" Onclick="redirectNow()" class="btn telegram">
-      <img src="https://i.makeagif.com/media/6-07-2017/Hdpt_G.gif" class="tg-icon">
-      Join Telegram
-    </a>
-  </div>
-
-  <div class="footer">
-    <p>© 2026 <strong>Streaming Premium</strong>. All rights reserved.</p>
-    <p class="footer-links">
-      <a href="https://64d5b402d.srtrck.top/653-65-3-46">Privacy Policy</a> • 
-      <a href="https://64d5b402d.srtrck.top/653-65-3-46">Terms</a> • 
-      <a href="https://64d5b402d.srtrck.top/653-65-3-46">Contact</a>
+    <div class="ad-box">
+		<a href="https://t.asrv.link/aff_c?offer_id=10489&aff_id=396644&source=AddName&aff_sub5=SF_006OG00000SHD2M" target="_blank"><img src="https://www.imglnkx.com/3788/20180402102128-005096A_GDAT_18_ALL_EN_71_L.gif" width="300" height="250" border="0" /></a>
+ </div>
+    <p>
+      Jointodate is a private social dating platform designed for adults who want to
+      chat, connect, and meet new people in a safe and friendly environment.
     </p>
-    <p style="margin-top:5px; font-size:11px; color:#666;">
-      Disclaimer: For entertainment purposes only.
+    <p>
+      ✔ Private conversations<br>
+      ✔ Real connections<br>
+      ✔ Simple and secure access
     </p>
+
+    <a href="https://t.asrv.link/aff_c?offer_id=10489&aff_id=396644&source=facebook&aff_sub5=SF_006OG00000SHD2M" class="btn">Continue</a>
+
+    <div class="note">
+      This service is intended for adults aged 18 and over.
+    </div>
+
   </div>
-    <!-- Histats.com  START  (aync)-->
+</div>
+
+<div class="footer">
+  © 2026 Jointodate.online |
+  <a href="https://Jointodate.online/privacy">Privacy Policy</a> |
+  <a href="https://Jointodate.online/privacy">Terms</a> |
+  <a href="https://Jointodate.online/privacy">Disclaimer</a><br>
+  18+ Only
+</div>
+
+<!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,5007819,4,0,0,0,00010000']);
 _Hasync.push(['Histats.fasi', '1']);
@@ -356,80 +180,8 @@ var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async
 hs.src = ('//s10.histats.com/js15_as.js');
 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
 })();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5007819&101" alt="cool hit counter" border="0"></a></noscript>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5007819&101" alt="free web page counters" border="0"></a></noscript>
 <!-- Histats.com  END  -->
-
-</div>
-</div>
-
-<!-- POPUP -->
-<div id="popup" class="popup">
-  <img id="popupAvatar" src="">
-  <div class="popup-text">
-    <strong id="popupName"></strong>
-    <span id="popupMsg"></span>
-  </div>
-</div>
-
-<audio id="notifSound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
-
-<script>
-function openMenu(){
-  sidebar.classList.add("active");
-  overlay.classList.add("active");
-}
-function closeMenu(){
-  sidebar.classList.remove("active");
-  overlay.classList.remove("active");
-}
-
-/* VIEWER */
-let viewer = 12845;
-setInterval(()=>{
-  viewer += Math.floor(Math.random()*5)+1;
-  document.getElementById("viewer").innerText =
-    "👁️ " + viewer.toLocaleString() + " people watching";
-},2000);
-
-setInterval(()=>{
-  const popup = document.getElementById("popup");
-  const name = names[Math.floor(Math.random()*names.length)];
-  const avatar = avatars[Math.floor(Math.random()*avatars.length)];
-
-  document.getElementById("popupAvatar").src = avatar;
-  document.getElementById("popupName").innerText = name;
-  document.getElementById("popupMsg").innerText = "just joined";
-
-  popup.classList.add("show");
-
-  document.getElementById("notifSound").play().catch(()=>{});
-
-  setTimeout(()=>{
-    popup.classList.remove("show");
-  }, 2500);
-
-}, 5000);
-
-/* REDIRECT */
-function startVideo(){
-  window.location.href="https://64d5b402d.srtrck.top/653-65-3-46";
-}
-function redirectNow(){
-  window.location.href="https://64d5b402d.srtrck.top/653-65-3-46";
-}
-</script>
-<script>
-const offerUrl = "https://64d5b402d.srtrck.top/653-65-3-46";
-
-let redirected = false;
-
-document.addEventListener("click", function () {
-  if (redirected) return;
-
-  redirected = true;
-  window.location.href = offerUrl;
-}, { once: true });
-</script>
 
 </body>
 </html>
